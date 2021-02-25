@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.Pages.Page_Lab1"
+             xmlns:resource ="clr-namespace:Lab3_POMS.RESX.Lab1">
+    <ContentPage.Content>
+        <StackLayout Margin="10,30,10,0">
+            <Label Text="{x:Static resource:Resource.TitleText}" HorizontalTextAlignment="Center"  FontSize="Large"></Label>
+
+            <StackLayout x:Name="inputLayout" Orientation="Vertical" HorizontalOptions="Center" Spacing="40">
+                <StackLayout>
+                    <Label  Margin="0,30,0,0" Text="{x:Static resource:Resource.growthLabelText}" HorizontalOptions="Center" FontSize="26"></Label>
+                    <Entry Keyboard="Numeric"  MaxLength="3" x:Name="gInput" Placeholder="{x:Static resource:Resource.growthEntryPlaceholderText}" HorizontalTextAlignment="Center"></Entry>
+                </StackLayout>
+                <StackLayout>
+                    <Label  Margin="0,30,0,0" Text="{x:Static resource:Resource.weightLabelText}" HorizontalOptions="Center" FontSize="26"></Label>
+                    <Entry Keyboard="Numeric" MaxLength="3" x:Name="wInput" Placeholder="{x:Static resource:Resource.weightEntryPlaceholderText}" HorizontalTextAlignment="Center"></Entry>
+
+                </StackLayout>
+            </StackLayout>
+
+            <Button Margin="30,30,30,0" Text="{x:Static resource:Resource.resultButtonText}" Clicked="Button_Clicked"  ></Button>
+
+            <Button Text="{x:Static resource:Resource.whatButtonText}" TextColor="Beige" HorizontalOptions="CenterAndExpand" Clicked="ButtonWhat_Clicked"></Button>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

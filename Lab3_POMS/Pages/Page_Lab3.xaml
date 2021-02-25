@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.Pages.Page_Lab3"
+             xmlns:local="clr-namespace:Lab3_POMS.Pages.Lab3_Fragments">
+    <ContentPage Title="Несколько фрагментов">
+        <ContentPage.Content>
+            <RelativeLayout  HorizontalOptions="Center"  Margin="0,30,0,0">
+                <local:View_ImageSpace 
+                    x:Name="ImageSpace" 
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                    RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    HorizontalOptions="Center"
+                    />
+                <local:View_ChangeSpace  
+                    BackEvent="View_ChangeSpace_BackEvent" 
+                    ForwardEvent="View_ChangeSpace_ForwardEvent"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.8}"
+                    RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    HorizontalOptions="Center"
+                    />
+            </RelativeLayout>
+        </ContentPage.Content> 
+    </ContentPage>
+    
+    <ContentPage Title="1 фрагмент">
+        <ContentPage.Content>
+            <RelativeLayout  HorizontalOptions="Center" VerticalOptions="Center">
+            <local:View_ImageSpace 
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                    RelativeLayout.WidthConstraint ="{ConstraintExpression Type=RelativeToParent, Property=Width}"
+                    HorizontalOptions="Center"
+                    />
+            </RelativeLayout>
+        </ContentPage.Content>
+    </ContentPage>
+    
+    
+</TabbedPage>

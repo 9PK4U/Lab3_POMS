@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.MainPage"
+             xmlns:pages="clr-namespace:Lab3_POMS.Pages">
+
+    <FlyoutItem Title="Лабораторная1">
+        <Tab>
+            <ShellContent x:Name="shellContent1">
+                <pages:Page_Lab1/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Лабораторная3">
+        <Tab>
+            <ShellContent x:Name="shellContent2">
+                <pages:Page_Lab3/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
+
+
+</Shell>

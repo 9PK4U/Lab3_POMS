@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.Pages.Lab3_Fragments.View_ChangeSpace">
+  <ContentView.Content>
+      <StackLayout Orientation="Horizontal" Spacing="30">
+            <Button x:Name="Button_Back" Text="Назад" Clicked="Button_Back_Clicked"/>
+            <Button x:Name="Button_Forward"  Text="Вперед" Clicked="Button_Forward_Clicked"/>
+          
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
