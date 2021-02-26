@@ -8,19 +8,25 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using Lab3_POMS.RESX.Lab1;
+using Lab3_POMS.Classes.Lab4;
+
 
 namespace Lab3_POMS.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page_Lab1 : ContentPage
     {
+        
         public Page_Lab1()
         {
+
             InitializeComponent();
+            App.Current.Resources.Add("list", new List<HistoryItem>());
+
         }
         private void Button_Clicked(object sender, EventArgs e)
         {
-            float growth = Convert.ToSingle(gInput.Text) / 100;
+            float growth = Convert.ToSingle(gInput.Text);
             float weight = Convert.ToSingle(wInput.Text);
 
             float result = IndexCalculation(growth, weight);
@@ -31,6 +37,14 @@ namespace Lab3_POMS.Pages
                 return;
             }
 
+            string detailResult = DetailResult(result);
+            DisplayAlert(Resource.resultText, Resource.yourIndexText + " " + Convert.ToInt32(result).ToString() + "\n " + Resource.prefixYourIndex + " " + detailResult, "Ok");
+
+            ((List<HistoryItem>)App.Current.Resources["list"]).Add(new HistoryItem(weight, growth, result,detailResult));
+        }
+
+        private static string DetailResult(float result)
+        {
             string res;
             if (result > 25)
             {
@@ -44,9 +58,8 @@ namespace Lab3_POMS.Pages
             {
                 res = Resource.normaMasslText;
             }
-            DisplayAlert(Resource.resultText, Resource.yourIndexText + " " + Convert.ToInt32(result).ToString() + "\n " + Resource.prefixYourIndex + " " + res, "Ok");
 
-
+            return res;
         }
 
         private void ButtonWhat_Clicked(object sender, EventArgs e)
@@ -56,6 +69,7 @@ namespace Lab3_POMS.Pages
 
         private float IndexCalculation(float growth, float weight)
         {
+            growth /= 100;
             float res = weight / (growth * growth);
             return res;
         }
@@ -77,5 +91,13 @@ namespace Lab3_POMS.Pages
             }
 
         }
+
+
+
+        private void HistoryItem_Clicked(object sender, EventArgs e)
+        {
+           Navigation.PushAsync(new Page_Lab4());
+        }
     }
+
 }

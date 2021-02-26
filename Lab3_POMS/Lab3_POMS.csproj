@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Classes\Lab4\HistoryCell.xaml.cs">
+      <DependentUpon>HistoryCell.xaml</DependentUpon>
+    </Compile>
     <Compile Update="RESX\Lab1\Resource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -35,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Classes\Lab4\HistoryCell.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Pages\Lab3_Fragments\View_ChangeSpace.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -45,6 +51,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Pages\Page_Lab3.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Pages\Page_Lab4.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="RESX\Lab1\Resource.resx">
