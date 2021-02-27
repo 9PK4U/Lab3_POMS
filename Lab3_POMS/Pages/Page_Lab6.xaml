@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.Pages.Page_Lab6">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Entry x:Name="entryText" Placeholder="Последняя запись"></Entry>
+            <Button Text="Загрузить содержимое"
+                    Clicked="Button_Clicked"/>
+            <Label x:Name="textFile"
+                   Margin="30"
+                   
+                VerticalOptions="StartAndExpand" 
+                HorizontalOptions="StartAndExpand" 
+                 />
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

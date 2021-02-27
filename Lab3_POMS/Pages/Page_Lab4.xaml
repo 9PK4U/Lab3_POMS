@@ -4,15 +4,18 @@
              x:Class="Lab3_POMS.Pages.Page_Lab4"
              xmlns:local ="clr-namespace:Lab3_POMS.Classes.Lab4"
              Title="История">
-    <ListView x:Name="historyList"
-            ItemsSource="{Binding Items}"
-            HasUnevenRows="True"
-            ItemTapped="OnItemTapped">
-        <ListView.ItemTemplate>
+    <StackLayout>
+        <Button Text="Очистить" Clicked="Button_Clicked"/>
+        <ListView x:Name="historyList"
+                ItemsSource="{Binding Items}"
+                HasUnevenRows="True"
+                ItemTapped="OnItemTapped">
+            <ListView.ItemTemplate>
                 
-        <DataTemplate>
-            <local:HistoryCell></local:HistoryCell>
-        </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+            <DataTemplate>
+                <local:HistoryCell></local:HistoryCell>
+            </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

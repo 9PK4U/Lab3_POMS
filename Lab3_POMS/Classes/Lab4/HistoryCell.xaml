@@ -5,7 +5,7 @@
     <ViewCell.View>
         <StackLayout Orientation="Vertical">
 
-                <Label  Text="{Binding Text}"
+                <Label  Text="{Binding}"
                     TextColor="Black"
                     FontSize="Body"
                    />
@@ -13,6 +13,7 @@
                        
                            
                     TextColor="Gray" />
+                
 
             </StackLayout>
     </ViewCell.View>

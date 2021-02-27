@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,7 +16,7 @@ namespace Lab3_POMS.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page_Lab1 : ContentPage
     {
-        
+        Classes.DataBase db = new Classes.DataBase();
         public Page_Lab1()
         {
 
@@ -40,7 +40,8 @@ namespace Lab3_POMS.Pages
             string detailResult = DetailResult(result);
             DisplayAlert(Resource.resultText, Resource.yourIndexText + " " + Convert.ToInt32(result).ToString() + "\n " + Resource.prefixYourIndex + " " + detailResult, "Ok");
 
-            ((List<HistoryItem>)App.Current.Resources["list"]).Add(new HistoryItem(weight, growth, result,detailResult));
+            //((List<HistoryItem>)App.Current.Resources["list"]).Add(new HistoryItem(weight, growth, result,detailResult));
+            AddToDataBase(weight, growth, result, detailResult);
         }
 
         private static string DetailResult(float result)
@@ -97,6 +98,15 @@ namespace Lab3_POMS.Pages
         private void HistoryItem_Clicked(object sender, EventArgs e)
         {
            Navigation.PushAsync(new Page_Lab4());
+        }
+
+
+        private void AddToDataBase(float growth, float weight, float result, string detailResult)
+        {
+            var item = new HistoryItem() { Weight = weight, Growth = growth, IBM = result, DetailText = detailResult, Date = DateTime.Now.ToString() };
+            //var item = HistoryItem.Builder(weight, growth, result, detailResult);
+            db.AddItem(item);
+
         }
     }
 
