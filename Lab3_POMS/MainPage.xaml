@@ -20,6 +20,14 @@
         </Tab>
     </FlyoutItem>
 
+    <FlyoutItem Title="Лабораторная5">
+        <Tab>
+            <ShellContent x:Name="shellContent3">
+                <pages:Page_Lab5/>
+            </ShellContent>
+        </Tab>
+    </FlyoutItem>
+
 
 
 </Shell>

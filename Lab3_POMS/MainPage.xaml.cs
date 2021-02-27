@@ -13,6 +13,17 @@ namespace Lab3_POMS
         public MainPage()
         {
             InitializeComponent();
+            SubscribeHandlerBrowser();
+        }
+
+        private void SubscribeHandlerBrowser()
+        {
+            MessagingCenter.Unsubscribe<string>(this, "BrowserIntent");
+            MessagingCenter.Subscribe<string>(this, "BrowserIntent", (value) =>
+            {
+                Navigation.PushAsync(new Pages.Lab5_Fragments.PageHandler(value));
+            });
         }
     }
+    
 }

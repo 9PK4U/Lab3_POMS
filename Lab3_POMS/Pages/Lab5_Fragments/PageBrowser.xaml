@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab3_POMS.Pages.Lab5_Fragments.PageBrowser">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Введите ссылку ниже чтобы открыть её в браузере"
+                VerticalOptions="Start" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Entry Placeholder="URL"
+                   HorizontalTextAlignment="Center"
+                   Keyboard="Url"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Fill"
+                   x:Name="linkEntry"/>
+
+            <Button Text="Открыть ссылку"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Clicked="OpenLink"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
