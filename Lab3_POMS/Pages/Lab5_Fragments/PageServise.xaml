@@ -16,9 +16,9 @@
                    Text="0"
                    x:Name="label"/>
 
-            <StackLayout Orientation="Horizontal"
+            <StackLayout Orientation="Vertical"
                          HorizontalOptions="Center"
-                         VerticalOptions="End">
+                         >
                 <Button
                         Clicked="StartService"
                     Text="Запустить службу"

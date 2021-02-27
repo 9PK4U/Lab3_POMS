@@ -8,6 +8,8 @@ using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
 using Android.Content;
+using Android.Net;
+
 
 namespace Lab3_POMS.Droid
 {
@@ -32,6 +34,19 @@ namespace Lab3_POMS.Droid
             {
                 MessagingCenter.Send<string>(Intent.ClipData.GetItemAt(0).Text, "BrowserIntent");
             }
+
+            //Intent intent = new Intent(Intent.ActionView, Uri.Parse("https://www.google.co.in/"));
+
+
+            MessagingCenter.Unsubscribe<string>(this, "OpenBrowser");
+            MessagingCenter.Subscribe<string>(this, "OpenBrowser", (value) =>
+            {
+                Intent intent = new Intent(Intent.ActionView, Android.Net.Uri.Parse(value));
+                String title = "Complete Action Using";
+
+                Intent chooser = Intent.CreateChooser(intent, title);
+                StartActivity(chooser);
+            });
 
 
         }

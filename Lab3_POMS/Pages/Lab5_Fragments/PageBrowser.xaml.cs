@@ -17,17 +17,11 @@ namespace Lab3_POMS.Pages.Lab5_Fragments
             InitializeComponent();
         }
 
-        private async void OpenLink(object sender, EventArgs e)
+        private void OpenLink(object sender, EventArgs e)
         {
-            try
-            {
-                await Browser.OpenAsync(linkEntry.Text, BrowserLaunchMode.SystemPreferred);
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("Ошибка", "Ссылка не действительна", "ОК");
-            }
-            
+
+            MessagingCenter.Send<string>(linkEntry.Text, "OpenBrowser");
+
         }
     }
 }

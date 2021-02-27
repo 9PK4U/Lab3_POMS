@@ -30,7 +30,7 @@ namespace Lab3_POMS.Droid
                     if (counter == 10)
                     {
                         var manager = new AndroidNotificationManager();
-                        manager.SendNotification("Конец", "Ну типа все");
+                        manager.SendNotification("Таймер", "Таймер закончил работу");
                         StopService(intent);
     
                     }
